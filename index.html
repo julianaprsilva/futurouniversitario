@@ -16,24 +16,24 @@
                  <h1>Futuro Universitário</h1>
                 <div class="row">
                     <p>Busque informações sobre universidades atráves do nome dela ou atráves do curso sua localização</p>
-                       <div>
+                       <form formBusca name="formBusca" ng-controller="futuroUniversitarioCtrl">
                            <div class="input-group">
                                <div class="dropdown input-group-btn">
-                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    Universidade
+                                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" value="1" ng-model="button">
+                                    <span class="selection">Universidade</span>
                                     <span class="caret"></span>
                                   </button>
                                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#">Universidade</a></li>
-                                    <li><a href="#">Curso</a></li>
+                                    <li><a href="#" data-value=1>Universidade</a></li>
+                                    <li><a href="#" data-value=2>Curso</a></li>
                                   </ul>
                                 </div>
-                               <input type="text" class="form-control" placeholder="Busca" />
+                                <input type="text" class="form-control" placeholder="Busca" ng-model="nome"/>
                                 <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                    <button class="btn btn-secondary" type="button" ng-click="procura(nome)"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                                 </span>
                                
-                            </div>
+                            </form>
                         </div>
                  </div>
               </div>
@@ -44,6 +44,7 @@
         <script src="bower_components/angular-messages/angular-messages.js"></script>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
         <script src="js/modules.js"></script>
         <script src="js/controlers.js"></script>
     </body>
