@@ -23,30 +23,42 @@ angular.module('FuturoUniversitario').controller('futuroUniversitarioCtrl', func
                  'Content-Type': 'application/json',
                  'Access-Control-Allow-Origin': '*',
                  'Access-Control-Allow-Methods': 'GET',
-                 'Access-Control-Allow-Headers': 'Content-Type, X-Requested-With'
+                 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
              }
         };
         
-        /* $.getJSON("http://en.dataviva.info/attrs/university", function(data) {
+        $.getJSON("http://en.dataviva.info/hedu/2012/4mg/show/481C01/", function(data) {
             console.log(JSON.stringify(data));
-         });*/
+         });
         
-         /*$.getJSON('http://en.dataviva.info/attrs/university/?jsoncallback=?&callback:getJson')
+         $.getJSON('http://en.dataviva.info/hedu/2012/4mg/show/481C01/?jsoncallback=?&callback:getJson')
          .done(function(){
              console.log(JSON.stringify(data));
-         });*/
+         });
+        
         console.log('Vou conseguir sim');
         
         
-        $http.jsonp('http://en.dataviva.info/attrs/university/?format=json&jsoncallback=?&callback=jsonp_callback') 
+        
+        
+        $http.get('http://en.dataviva.info/hedu/2012/4mg/show/481C01/?format=json&jsoncallback=?&callback=jsonp_callback') 
         .success(function(){
             console.log(data);
+        })
+        .error(function(data){
+            console.log('erro primeiro');
         });
         
-        $http.get("http://en.dataviva.info/attrs/university/")
+        $http.get("http://en.dataviva.info/hedu/2012/4mg/show/481C01/", req)
         .success(function (data) {
             console.log(data);
+        })
+        .error(function(callback){
+            console.log(callback);
         });
+        
+        console.log('Não me deixe desistir, não me deixar desanimar');
+    
         
         /*$.getJSON('http://en.dataviva.info/attrs/university/?format=json&action=query&list=search&srsearch=Oculus&utf8&callback=?')
         .fail(function(){

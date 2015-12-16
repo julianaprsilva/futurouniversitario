@@ -1,6 +1,8 @@
 angular.module('FuturoUniversitario',  ['ngRoute', 'ngMessages']);
 
-
+angular.module('FuturoUniversitario').config(function($httpProvider){
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+});
 /*angular.module('NotesApp').config(['$routeProvider', function($routeProvider) {
     $routeProvider.
       when('/lembrete', {
